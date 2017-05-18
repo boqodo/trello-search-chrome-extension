@@ -1,0 +1,172 @@
+/* CSS file placeholder. */
+.trellosearchWin {
+    border: none;
+    border-radius: 5px;
+    height: 262px;
+    width: 456px;
+    margin-bottom: 30px;
+}
+
+#header {
+    padding: 0;
+    border-bottom: 1px #E2E2E2 solid;
+    height: 39px;
+    background: #026AA7;
+    z-index: 10;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+}
+
+.branding span {
+    margin: 5px 10px;
+    background-image: url(assets/trello-logo-white.svg);
+    background-size: 126px 29px;
+    background-repeat: no-repeat;
+    width: 126px;
+    height: 29px;
+    display: inline-block;
+}
+
+#simSearchNotes {
+    padding: 6px 10px 0 10px;
+    position: relative;
+}
+
+.noteSectionHeader {
+    display: inline-block;
+    width: 100%;
+}
+
+.noteSectionTitle {
+    font-size: 14px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    color: #ADACAC;
+    padding: 0 4px;
+    text-shadow: 0 1px rgba(255, 255, 255, 0.75);
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    float: left;
+}
+
+.noteSectionMore {
+    font-size: 14px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    color: #ADACAC;
+    padding: 0 4px;
+    text-shadow: 0 1px rgba(255, 255, 255, 0.75);
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    float: right;
+}
+
+.noteSectionMore a:link {
+    text-decoration: none;
+    color: inherit;
+    text-shadow: inherit;
+    -webkit-font-smoothing: inherit;
+    background-repeat: no-repeat;
+    font: inherit;
+}
+
+.noteSection {
+    width: 100%;
+    padding-bottom: 11px;
+    position: relative;
+}
+
+.noteSectionNotes {
+    margin-top: 5px;
+    overflow-x: hidden;
+    position: relative;
+    white-space: nowrap;
+}
+
+.noteSectionNotes .container {
+    display: inline-block;
+    margin: 0 5px;
+    vertical-align: top;
+    white-space: normal;
+}
+
+.noteSectionNotes .container:first-child {
+    margin-right: 6px;
+    margin-left: 0;
+}
+
+.noteSectionNotes .container:nth-child(3) {
+    margin-right: 0;
+    margin-left: 6px;
+}
+
+.noteBlock {
+    background-color: white;
+    border-radius: 2px;
+    cursor: pointer;
+    font-family: Helvetica;
+    height: 180px;
+    position: relative;
+    width: 136px;
+    border: 1px solid #E9E9E9;
+}
+
+.noteBlock div.snippet {
+    float: left;
+    margin-left: -1px;
+    padding: 6px 10px 0px 10px;
+    position: absolute;
+    width: 110px;
+}
+
+.noteBlock h1 {
+    font-size: 13px;
+    font-weight: bold;
+    height: 30px;
+    line-height: 15px;
+    margin: 0px 0px 7px 0px;
+    overflow: hidden;
+}
+
+.noteBlock p {
+    color: #808080;
+    font-size: 11px;
+    line-height: 16px;
+    margin: 0px;
+}
+
+.noteBlock p.date {
+    color: #518C94;
+    font-style: italic;
+}
+
+.noteBlock p.snippettext {
+    height: 112px;
+    overflow: hidden;
+}
+
+.noteBlock p.mixed {
+    height: 111px;
+    overflow: hidden;
+}
+
+.noteBlock img {
+    margin-top: 1px;
+    margin-bottom: 0px;
+    max-height: 110px;
+    max-width: 110px;
+}
+
+.noteBlock img.smallimage {
+    margin-top: 3px;
+    max-height: 60px;
+    max-width: 60px;
+}
+
+.noteLink {
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
