@@ -31,7 +31,7 @@
 
 ## 截图
 
-![百度集成](trello_search_baidu.png)
+![百度搜索](trello_search_baidu.png)
 
 ## 参考文档
 
