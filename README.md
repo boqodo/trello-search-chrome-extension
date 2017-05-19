@@ -3,6 +3,11 @@
 > 灵感来源于`Evernote/印象笔记`的Chrome插件；
 
 
+## 计划功能点
+
+- [x] baidu集成搜索功能
+- [ ] google集成搜索功能
+
 ## Trello
 
 - 授权接口 https://trello.com/1/authorize
@@ -11,7 +16,7 @@
 
 ## Chrome 开放过程中的问题记录
 
-- [ ] google集成搜索功能
+1. content-script 嵌入页面的js的消息传递需要通过background.js进行；
 
 
 ## 图标
@@ -25,3 +30,13 @@
 
 
 ## 截图
+
+![百度集成](trello_search_baidu.png)
+
+## 参考文档
+
+1. [360插件开发中文文档](http://open.chrome.360.cn/extension_dev/overview.html)
+
+2. [chrome官方开发文档](https://developer.chrome.com/apps/about_apps)
+
+3. [动手做第一个Chrome插件](http://www.cnblogs.com/kmsfan/p/5300308.html)

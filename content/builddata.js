@@ -7,11 +7,11 @@ document.addEventListener('DOMContentLoaded', function () {
         query: decodeURI(keyword),
         key: 'b038e0549b0ff57af4aa71d69eea01b7',
         token: token,
-        cards_limit: 3,  // 限制取3条
+        cards_limit: 4,  // 限制取条数
         modelTypes: 'cards'  //限制返回card部分
     };
     $.get("https://api.trello.com/1/search", params, function (result) {
-        var count = result.cards.length;
+        var count = result.cards.length; //trello search接口未返回条数
         var message = {isEmpty: count === 0};
         chrome.runtime.sendMessage(message, function (resp) {
             console.log(resp);
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         var counts = [];
         counts.push('<div class="noteSectionHeader">');
-        counts.push('   <div class="noteSectionTitle">共有' + count + '条相关搜索结果</div>');
+        counts.push('   <div class="noteSectionTitle">有' + (count>3?'多于3':count) + '条相关搜索结果</div>');
         counts.push('   <div class="noteSectionMore"><a target="_blank" href="https://trello.com/search?q=' + keyword + '">更多</a></div>');
         counts.push('</div>');
         $("#all").prepend(counts.join(""));
