@@ -20,6 +20,7 @@
       ],
       "matches": [
         "*://*.baidu.com/*",
+        "*://*.bing.com/*",
         "*://*.google.cn/*",
         "*://*.google.com/*",
         "*://*.google.com.hk/*"

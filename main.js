@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var hash = window.location.hash;
     var token = hash ? hash.split("=")[1] : null;
     if (token) {
-        console.log("--------" + token);
         localStorage.setItem("token", token);
         chrome.tabs.getCurrent(function (tab) {
             var url = tab.url;

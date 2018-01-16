@@ -1,7 +1,6 @@
 console.log("trello search js loaded!");
 
 chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
-    console.log(message);
     if (message.hasOwnProperty("isEmpty")) {
         if (message.isEmpty) {
             closeTrelloSearch();
@@ -11,31 +10,66 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
         }
     }
 });
+
+var map ={
+    baidu:{
+        input:'#kw',
+        insert:'#content_left'
+    },
+    google:{
+        input:'#lst-ib',
+        insert:'#rhs_block'
+    },
+    bing:{
+        input:'#sb_form_q',
+        insert:'#b_context'
+    }
+}
 var task = null;
 
-$("#kw").on("keydown", function (e) {
-    if (task) {
-        clearTimeout(task);
+var se = getSearchEnginer();
+if(se){
+    var config = map[se];
+    var input = config.input;
+    $(input).on("keydown", function (e) {
+        if (task) {
+            clearTimeout(task);
+        }
+        task = setTimeout(loadData, 500);
+    });
+    
+    loadData();
+}
+function getSearchEnginer(){
+    var url = document.URL;
+    url=url.toLowerCase();
+    if(url.indexOf('.baidu.')>-1){
+        return 'baidu';
+    }else if(url.indexOf('.google.')>-1){
+        return 'google';
+    }else if(url.indexOf('.bing.')>-1){
+        return 'bing';
     }
-    task = setTimeout(loadData, 500);
-});
-
-loadData();
+    return
+}
 
 function loadData() {
-    var $c = $("#content_left");
-    if ($c.length > 0) {
-        var trellosearch = $("#trellosearch");
-        if (trellosearch.length > 0) {
-            trellosearch.remove();
-        }
-
-        var url = chrome.extension.getURL('search_result.html');
-        var exid = chrome.runtime.id;
-        var keyword = $("#kw").val();
-        url = url + "?keyword=" + encodeURI(keyword);
-        $c.prepend("<iframe id='trellosearch' extension='" + exid + "' src='" + url + "' style='display:none;'></iframe>");
-    }
+     var config = map[se];
+     var input = config.input;
+     var insert = config.insert;
+     var $c = $(insert);
+     if ($c.length > 0) {
+         var trellosearch = $("#trellosearch");
+         if (trellosearch.length > 0) {
+             trellosearch.remove();
+         }
+ 
+         var url = chrome.extension.getURL('search_result.html');
+         var exid = chrome.runtime.id;
+         var keyword = $(input).val();
+         url = url + "?keyword=" + encodeURI(keyword);
+         $c.prepend("<iframe id='trellosearch' extension='" + exid + "' src='" + url + "' style='display:none;'></iframe>");
+     }
 }
 
 function closeTrelloSearch() {

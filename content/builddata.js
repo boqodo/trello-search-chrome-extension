@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     var keyword = getUrlParam("keyword");
-    console.log(keyword);
     var token = localStorage.getItem("token");
     var params = {
         query: decodeURI(keyword),
