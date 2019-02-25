@@ -17,7 +17,7 @@ var map ={
         insert:'#content_left'
     },
     google:{
-        input:'#lst-ib',
+        input:'input.gLFyf.gsfi',
         insert:'#rhs_block'
     },
     bing:{
